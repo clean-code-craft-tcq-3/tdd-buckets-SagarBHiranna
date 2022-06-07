@@ -60,7 +60,7 @@ TEST_CASE("Get the range distribution details for consecutive numbers "){
 
 TEST_CASE("Get the range distribution details for consecutive numbers "){
     int sampleNumbersArray[] = {1,21,2};
-    REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 2);
+    REQUIRE(getRangeDetails(sampleNumbersArray, 3) == 2);
 }
 
 
@@ -87,5 +87,5 @@ TEST_CASE("Get the range distribution details for consecutive numbers "){
 
 TEST_CASE("Check the display function "){
     int sampleNumbersArray[] = {1,21,2};
-    REQUIRE(informRangeToUser(sampleNumbersArray, 2) == 2);
+    REQUIRE(informRangeToUser(sampleNumbersArray, 3) == 2);
 }
