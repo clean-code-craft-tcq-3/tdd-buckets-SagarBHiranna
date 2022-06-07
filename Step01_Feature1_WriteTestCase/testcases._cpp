@@ -8,7 +8,7 @@
    Actions : Write only test code (Unit Test).
    Result : FAILED .
    Reason : There is no function defined present     */
-TEST_CASE("Get the range distribution details for consecutive numbers "){
+TEST_CASE("Get the range distribution details for consecutive numbers scenario 1"){
     int sampleNumbersArray[] = {4,5};
     REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 1);
 }
