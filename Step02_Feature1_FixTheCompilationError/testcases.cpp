@@ -1,1 +1,24 @@
+#define CATCH_CONFIG_MAIN 
 
+#include "test/catch.hpp"
+#include "currentMeasurements.h"
+
+/* FEATURE 1 : The return Value for {4,5} from getRangeDetails should be 1 .
+   TDD_STEP1 : Write the Test Code(Unit Test) without having the implementation of a function being called .
+   Actions : Write only test code (Unit Test).
+   Result : FAILED .
+   Reason : There is no function defined present     */
+
+/* FEATURE 1 : The return Value for {4,5} from getRangeDetails should be 1 .
+   TDD_STEP2 : write enough code so that unit test code can compile and execute, but will not PASS .
+   Actions : Define a function but not implementation , And Tell Somehow the function is not implemented by .
+         1.  Forward declaration .
+         2.  Throws Exception .
+         3.  If language has some constraints return a value which tells function is not implemented .
+   Result : FAILED ... We conclude Bug Found.
+   Reason : Function is defined , but there is no implementation for the called function and function is made to return 0 always  */
+   
+TEST_CASE("Get the range distribution details for consecutive numbers "){
+    int sampleNumbersArray[] = {4,5};
+    REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 1);
+}
