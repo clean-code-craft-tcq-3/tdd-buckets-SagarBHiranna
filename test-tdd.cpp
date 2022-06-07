@@ -60,7 +60,7 @@ TEST_CASE("Get the range distribution details for consecutive numbers scenario 1
 
 TEST_CASE("Get the range distribution details for consecutive numbers scenario 2"){
     int sampleNumbersArray[] = {1,21,2};
-    REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 2);
+    REQUIRE(getRangeDetails(sampleNumbersArray, 3) == 2);
 }
 
 
@@ -87,5 +87,28 @@ TEST_CASE("Get the range distribution details for consecutive numbers scenario 2
 
 TEST_CASE("Check the display function "){
     int sampleNumbersArray[] = {1,21,2};
-    REQUIRE(informRangeToUser(sampleNumbersArray, 2) == 2);
+    REQUIRE(informRangeToUser(sampleNumbersArray, 3) == 2);
+}
+
+// FEW MORE TEST CASES 
+
+TEST_CASE("Get the range distribution details for consecutive numbers scenario 3"){
+    int sampleNumbersArray[] = {1,21,2,1,5,4,3,1,2,3,20};
+    int sampleNumbersArray1[] = {1,-1,2,-2,3,-3};
+    int sampleNumbersArray2[] = {1,-1,2,-2,3,-3,0};
+    REQUIRE(getRangeDetails(sampleNumbersArray, 11) == 2);
+    REQUIRE(getRangeDetails(sampleNumbersArray1, 6) == 2);
+    REQUIRE(getRangeDetails(sampleNumbersArray2, 7) == 1);
+}
+
+
+TEST_CASE("Check the display function Usecase 2"){
+    int sampleNumbersArray4[] = {1,21,2};
+    int sampleNumbersArray[] = {1,21,2,1,5,4,3,1,2,3,20};
+    int sampleNumbersArray1[] = {1,-1,2,-2,3,-3};
+    int sampleNumbersArray2[] = {1,-1,2,-2,3,-3,0};
+    REQUIRE(informRangeToUser(sampleNumbersArray4, 3) == 2);
+    REQUIRE(informRangeToUser(sampleNumbersArray, 11) == 2);
+    REQUIRE(informRangeToUser(sampleNumbersArray1, 6) == 2);
+    REQUIRE(informRangeToUser(sampleNumbersArray2, 7) == 1);
 }
