@@ -50,7 +50,7 @@ TEST_CASE("Get the range distribution details for consecutive numbers "){
    Result : PASSED .
    Reason : The data is sorted and working for feature 2 as well */
    
-TEST_CASE("Get the range distribution details for consecutive numbers "){
+TEST_CASE("Get the range distribution details for consecutive numbers scenario 2"){
     int sampleNumbersArray[] = {1,21,2};
-    REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 2);
+    REQUIRE(getRangeDetails(sampleNumbersArray, 3) == 2);
 }
