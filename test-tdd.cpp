@@ -32,7 +32,7 @@
    Result : PASSED .
    Reason : Functionality Not Affected , Make the code as per clean code practices*/
 
-TEST_CASE("Get the range distribution details for consecutive numbers ") {
+TEST_CASE("Get the range distribution details for consecutive numbers scenario 1") {
     int sampleNumbersArray[] = {4,5};
     REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 1);
 }
@@ -58,7 +58,7 @@ TEST_CASE("Get the range distribution details for consecutive numbers ") {
    Result : PASSED .
    Reason : Functionality Not Affected , Make the code as per clean code practices*/
 
-TEST_CASE("Get the range distribution details for consecutive numbers "){
+TEST_CASE("Get the range distribution details for consecutive numbers scenario 2"){
     int sampleNumbersArray[] = {1,21,2};
     REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 2);
 }
