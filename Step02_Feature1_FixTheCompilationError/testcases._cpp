@@ -18,7 +18,7 @@
    Result : FAILED ... We conclude Bug Found.
    Reason : Function is defined , but there is no implementation for the called function and function is made to return 0 always  */
    
-TEST_CASE("Get the range distribution details for consecutive numbers "){
+TEST_CASE("Get the range distribution details for consecutive numbers scenario 1"){
     int sampleNumbersArray[] = {4,5};
     REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 1);
 }
