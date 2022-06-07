@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN 
 
 #include "test/catch.hpp"
-#include "main.h"
+#include "currentMeasurements.h"
 
 /* FEATURE 1 : The return Value for {4,5} from getRangeDetails should be 1 .
    TDD_STEP1 : Write the Test Code(Unit Test) without having the implementation of a function being called .
@@ -32,9 +32,10 @@
    Result : PASSED .
    Reason : Functionality Not Affected , Make the code as per clean code practices*/
 
-TEST_CASE("Get the range distribution details for consecutive numbers ")
+TEST_CASE("Get the range distribution details for consecutive numbers ") {
     int sampleNumbersArray[] = {4,5};
     REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 1);
+}
 
 
 /* FEATURE 2 : The return Value for {1,21,2} from getRangeDetails should be 2 .
@@ -57,9 +58,10 @@ TEST_CASE("Get the range distribution details for consecutive numbers ")
    Result : PASSED .
    Reason : Functionality Not Affected , Make the code as per clean code practices*/
 
-TEST_CASE("Get the range distribution details for consecutive numbers ")
+TEST_CASE("Get the range distribution details for consecutive numbers "){
     int sampleNumbersArray[] = {1,21,2};
     REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 2);
+}
 
 
 /* FEATURE 3 : Display the Data on Console and also return the value to user .
@@ -83,6 +85,7 @@ TEST_CASE("Get the range distribution details for consecutive numbers ")
    Result : PASSED .
    Reason : Implementation done to pass current test */
 
-TEST_CASE("Check the display function ")
+TEST_CASE("Check the display function "){
     int sampleNumbersArray[] = {1,21,2};
     REQUIRE(informRangeToUser(sampleNumbersArray, 2) == 2);
+}
