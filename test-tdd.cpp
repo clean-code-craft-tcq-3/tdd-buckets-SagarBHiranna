@@ -47,7 +47,7 @@ TEST_CASE("Check the display function Usecase 2"){
 TEST_CASE("TestCaseto verify the functionality when the ADC Values passed are within range") {
 	
 	int ADCValues[] = {64, 512, 1140, 1220, 1560, 2048,4094};
-	int numberOfSamples = sizeof(ADCValues) / sizeof(ADCValues[0]);
+	int numberOfSamples = 7;
 	int expectedCurrentSenseValues[] = {0, 1, 2, 3, 4, 5, 10};
 	int ADC_Resolution = 12;
 	int maxCurrentValue = 10;
@@ -60,10 +60,9 @@ TEST_CASE("TestCaseto verify the functionality when the ADC Values passed are wi
 TEST_CASE("TestCaseto verify the functionality when the ADC Values passed are in error zone") {
 	
 	int ADCValuesInput[] = {4095};
-	int numberOfSamplesSize = sizeof(ADCValuesInput) / sizeof(ADCValuesInput[0]);
+	int numberOfSamplesSize = 1;
 	int ADC_Resolution_size = 12;
 	int maxCurrentValue_trial1 = 10;
 	int digitalvalues_input[] = {};
-	int expectedStartIndex = 0, expectedEndIndex = 5 , expectedNumOfReadingsInRange = 6;
 	REQUIRE(chargingCurrentValue(ADCValuesInput, numberOfSamplesSize, ADC_Resolution_size, maxCurrentValue_trial1, digitalvalues_input)==0);
 }
