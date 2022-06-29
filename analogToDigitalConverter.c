@@ -10,14 +10,8 @@ int digitalToAnalogCurrentValue(int A2DValues, int A2DResolution, int maxCurrent
 	float currentValue;
 	int analogConvertedvalue;
 	int maxValue = getMaxSensorDigitalValue(A2DResolution);
-	printf("%d\n", A2DValues);
-	printf("%d\n", maxValue);
-	float dividedValue = (float)A2DValues/(float)maxValue;
-	printf("%f\n", dividedValue);
 	currentValue = (float)(maxCurrentValue * ((float)A2DValues/(float)maxValue))/(float)maxValue;
-	printf("%f\n", currentValue);
 	analogConvertedvalue = round(currentValue);
-	printf("%d\n", analogConvertedvalue);
 	if(analogConvertedvalue < 0)
 		analogConvertedvalue = abs(analogConvertedvalue);
     return analogConvertedvalue;	
@@ -37,7 +31,8 @@ int chargingCurrentValue(int A2DValues[], int numberOfSamples, int A2DResolution
 		else{
 			return 0;
 		}
-		return 1;
+		
 	}
+	return 1;
 	
 }
