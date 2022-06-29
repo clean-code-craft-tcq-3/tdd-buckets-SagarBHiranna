@@ -59,12 +59,11 @@ TEST_CASE("TestCaseto verify the functionality when the ADC Values passed are wi
 
 TEST_CASE("TestCaseto verify the functionality when the ADC Values passed are in error zone") {
 	
-	int ADCValues[] = {4095};
-	int numberOfSamples = sizeof(ADCValues) / sizeof(ADCValues[0]);
-	int expectedCurrentSenseValues[] = {0};
-	int ADC_Resolution = 12;
-	int maxCurrentValue = 10;
-	int digitalvalues[] = {};
+	int ADCValuesInput[] = {4095};
+	int numberOfSamplesSize = sizeof(ADCValuesInput) / sizeof(ADCValuesInput[0]);
+	int ADC_Resolution_size = 12;
+	int maxCurrentValue_trial1 = 10;
+	int digitalvalues_input[] = {};
 	int expectedStartIndex = 0, expectedEndIndex = 5 , expectedNumOfReadingsInRange = 6;
-	REQUIRE(chargingCurrentValue(ADCValues, numberOfSamples, ADC_Resolution, maxCurrentValue, digitalvalues)==0);
+	REQUIRE(chargingCurrentValue(ADCValuesInput, numberOfSamplesSize, ADC_Resolution_size, maxCurrentValue_trial1, digitalvalues_input)==0);
 }
