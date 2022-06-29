@@ -1,0 +1,85 @@
+#define CATCH_CONFIG_MAIN 
+
+#include "test/catch.hpp"
+#include "currentMeasurements.h"
+
+/* FEATURE 1 : The return Value for {4,5} from getRangeDetails should be 1 .
+   TDD_STEP1 : Write the Test Code(Unit Test) without having the implementation of a function being called .
+   Actions : Write only test code (Unit Test).
+   Result : FAILED .
+   Reason : There is no function defined present     */
+
+/* FEATURE 1 : The return Value for {4,5} from getRangeDetails should be 1 .
+   TDD_STEP2 : write enough code so that unit test code can compile and execute, but will not PASS .
+   Actions : Define a function but not implementation , And Tell Somehow the function is not implemented by .
+         1.  Forward declaration .
+         2.  Throws Exception .
+         3.  If language has some constraints return a value which tells function is not implemented .
+   Result : FAILED ... We conclude Bug Found.
+   Reason : Function is defined , but there is no implementation for the called function and function is made to return 0 always  */
+
+/* FEATURE 1 : The return Value for {4,5} from getRangeDetails should be 1 .
+   TDD_STEP3 : write enough code so that the unit Test will pass.
+   Actions : Define a function and implementation just enough to pass the current testcase.
+   Result : PASSED .
+   Reason : Implementation is just enough to pass current test , but lets see how our code is stable when we extend the testcases*/
+   
+/* FEATURE 1 : The return Value for {4,5} from getRangeDetails should be 1 .
+   TDD_STEP4 : Refactor/Optimise the code without affecting the functionality.
+   Actions : Refactor/Optimise the code as per clean code practices.
+            1. Define updateRangeData(); To update the startRange, endRange and Number of elements in that range
+            2. isSamplesConsecutive(); To check if numbers are consecutive in nature .
+   Result : PASSED .
+   Reason : Functionality Not Affected , Make the code as per clean code practices*/
+
+TEST_CASE("Get the range distribution details for consecutive numbers "){
+    int sampleNumbersArray[] = {4,5};
+    REQUIRE(getRangeDetails(sampleNumbersArray, 2) == 1);
+}
+
+
+/* FEATURE 2 : The return Value for {1,21,2} from getRangeDetails should be 2 .
+   TDD_STEP5 : Check the functionality by adding new features or testcases.
+   Actions : Add new testcase representing the new feature .
+   Result : FAILED .
+   Reason : The data has to be sorted before classifying into ranges */
+
+/* FEATURE 2 : The return Value for {1,21,2} from getRangeDetails should be 2 .
+   TDD_STEP6 : Upgrade the code to achieve the desired result.
+   Actions : update the code.
+   Result : PASSED .
+   Reason : The data is sorted and working for feature 2 as well */
+   
+/* FEATURE 2 : The return Value for {1,21,2} from getRangeDetails should be 2 .
+   TDD_STEP7 : Refactor/Optimise the code without affecting the functionality.
+   Actions : Refactor/Optimise the code as per clean code practices.
+            1. SortArray().
+            2. CmpFunc().
+   Result : PASSED .
+   Reason : Functionality Not Affected , Make the code as per clean code practices*/
+
+TEST_CASE("Get the range distribution details for consecutive numbers "){
+    int sampleNumbersArray[] = {1,21,2};
+    REQUIRE(getRangeDetails(sampleNumbersArray, 3) == 2);
+}
+
+
+/* FEATURE 3 : Display the Data on Console and also return the value to user .
+   TDD_STEP8 : BringIn New Feature of displaying the contents on console .
+   Actions : Call the function informRangeToUser() .
+   Result : FAILED .
+   Reason : The function informRangeToUser() is not defined .*/
+
+/* FEATURE 3 : Display the Data on Console and also return the value to user .
+   TDD_STEP9 : write enough code so that unit test code can compile and execute, but will not PASS .
+   Actions : Define a function but not implementation , And Tell Somehow the function is not implemented by .
+         1.  Forward declaration .
+         2.  Throws Exception .
+         3.  If language has some constraints return a value which tells function is not implemented .
+   Result : FAILED ... We conclude Bug Found.
+   Reason : Function is defined , but there is no implementation for the called function and function is made to return 0 always*/
+
+TEST_CASE("Check the display function "){
+    int sampleNumbersArray[] = {1,21,2};
+    REQUIRE(informRangeToUser(sampleNumbersArray, 3) == 2);
+}
