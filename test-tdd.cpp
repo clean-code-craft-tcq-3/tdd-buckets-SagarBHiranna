@@ -43,18 +43,29 @@ TEST_CASE("Check the display function Usecase 2"){
     REQUIRE(informRangeToUser(sampleNumbersArray2, 7) == 1);
 }
 
+TEST_CASE("TestCase to verify the functionality of digital value to analog conversion") {
+	
+	int ADCValuesArray[] = {64, 512, 1140, 1220, 1560, 2048,4094};
+	REQUIRE(digitalToAnalogCurrentValue(ADCValuesArray[0], 12, 10)==0);
+    REQUIRE(digitalToAnalogCurrentValue(ADCValuesArray[1], 12, 10)==1);
+    REQUIRE(digitalToAnalogCurrentValue(ADCValuesArray[2], 12, 10)==3);
+    REQUIRE(digitalToAnalogCurrentValue(ADCValuesArray[3], 12, 10)==3);
+    REQUIRE(digitalToAnalogCurrentValue(ADCValuesArray[4], 12, 10)==4);
+    REQUIRE(digitalToAnalogCurrentValue(ADCValuesArray[5], 12, 10)==5);
+
+}
 
 TEST_CASE("TestCaseto verify the functionality when the ADC Values passed are within range") {
 	
 	int ADCValues[] = {64, 512, 1140, 1220, 1560, 2048,4094};
 	int numberOfSamples = 7;
-	int expectedCurrentSenseValues[] = {0, 1, 2, 3, 4, 5, 10};
+	int expectedCurrentSenseValues[] = {0, 1, 3, 3, 4, 5, 10};
 	int ADC_Resolution = 12;
 	int maxCurrentValue = 10;
 	int digitalvalues[] = {};
 	int expectedStartIndex = 0, expectedEndIndex = 5 , expectedNumOfReadingsInRange = 6;
 	REQUIRE(chargingCurrentValue(ADCValues, numberOfSamples, ADC_Resolution, maxCurrentValue, digitalvalues)==1);
-	REQUIRE(informRangeToUser(digitalvalues, numberOfSamples) == 2);
+	REQUIRE(informRangeToUser(digitalvalues, numberOfSamples) == 3);
 }
 
 TEST_CASE("TestCaseto verify the functionality when the ADC Values passed are in error zone") {
