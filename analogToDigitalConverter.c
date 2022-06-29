@@ -14,7 +14,7 @@ int digitalToAnalogCurrentValue(int A2DValues, int A2DResolution, int maxCurrent
 	printf("%d\n", maxValue);
 	float dividedValue = (float)A2DValues/(float)maxValue;
 	printf("%f\n", dividedValue);
-	currentValue = (maxCurrentValue * (A2DValues/maxValue))/maxValue;
+	currentValue = (float)(maxCurrentValue * ((float)A2DValues/(float)maxValue))/(float)maxValue;
 	printf("%f\n", currentValue);
 	analogConvertedvalue = round(currentValue);
 	printf("%d\n", analogConvertedvalue);
